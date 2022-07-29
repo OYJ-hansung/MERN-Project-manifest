@@ -4,4 +4,4 @@ images:
 - name: dhdudwn95/mern
   newTag: "44"
 resources:
-- ../../base
+- ../../back_base

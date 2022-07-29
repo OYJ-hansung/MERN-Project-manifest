@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back
+  labels:
+    app: back
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: back
+  template:
+    metadata:
+      labels:
+        app: back
+    spec:
+      containers:
+      - name: backend-app
+        image: dhdudwn95/mern:v10.0-server
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: 50m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: back
+spec:
+  ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+      nodePort: 30000
+  selector:
+    app: back
+  type: NodePort
