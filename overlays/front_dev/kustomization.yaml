@@ -2,6 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: dhdudwn95/mern
-  newTag: v58-app
+  newTag: v59-app
 resources:
 - ../../front_base
